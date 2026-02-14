@@ -72,5 +72,3 @@ JavaScript (UI Interactivity)
 Configured Django Media settings for dynamic file storage
 
 Image upload and retrieval system
-
----
