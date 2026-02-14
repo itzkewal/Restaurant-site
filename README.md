@@ -5,77 +5,101 @@ An end-to-end, fully responsive Restaurant Management Platform built using Djang
 
 The platform delivers a seamless digital experience for customers to browse a dynamically managed menu and book tables online, while providing restaurant owners with a powerful and intuitive administrative interface to manage offerings and reservations efficiently.
 
-🎯 Key Features
-👨‍🍳 Customer Features
+🎯 Core Functionalities
+👤 Customer-Facing Features
+🍴 Dynamic Menu System
 
-Dynamic Menu Rendering from Database
+Categorized menu items dynamically rendered from the database
 
-Categorized Food Listings
+Each item contains description, pricing, and image
 
-Table Reservation System
+Clean, structured UI for intuitive browsing
 
-Contact & Inquiry Form
+📅 Table Reservation System
 
-Django Messages Framework for feedback alerts
+Booking engine capturing:
 
-Fully Responsive Layout (Mobile-Friendly)
+Customer Name
 
-🛠 Admin Features
+Date & Time
 
-Full CRUD Operations for Menu Categories & Items
+Guest Count
 
-Reservation Management Dashboard
+Reservation data securely stored for administrative review
 
-Image Upload & Media Handling
+📩 Contact & Feedback Module
 
-Secure Backend using Django ORM
+Integrated contact form for customer inquiries
 
-🏗️ Project Architecture
+Real-time success/error notifications using Django Messages Framework
 
-Built using Django MVT (Model-View-Template) Architecture
+🛠 Administrative Capabilities
 
-Relational Database Schema with ForeignKey relationships
+Full CRUD operations for menu categories
 
-Optimized queries using Django ORM
+Manage menu items and pricing
 
-Modular template structure for scalability
+Dynamic image upload via Django Media handling
+
+Centralized reservation management using Django Admin Panel
 
 🧱 Tech Stack
-
-Backend:
+🔹 Backend
 
 Python
 
-Django
+Django (MVT Architecture)
 
-Django ORM
+Django ORM for secure database abstraction
 
-Database:
+🔹 Database
 
-SQLite (Development)
+SQLite (Development environment)
 
-Frontend:
+🔹 Frontend
 
 HTML5
 
 CSS
 
-JavaScript
+JavaScript (UI Interactivity)
 
-Media Handling:
+🔹 Media Handling
 
-Django Media Configuration
+Configured Django Media settings for dynamic file storage
 
-Dynamic Image Upload System
+Image upload and retrieval system
 
-📈 Future Scope
+📈 Future Enhancements
 
-User Authentication & Profile Dashboard
+To scale the platform further:
 
-Payment Gateway Integration (Stripe / Razorpay)
+🔐 User Authentication System
 
-AJAX-based Live Search for Menu
+Customer account creation
 
-Order Management System
+Booking history dashboard
 
-REST API conversion for mobile app integration
+💳 Payment Gateway Integration
+
+Stripe or Razorpay integration
+
+Online reservations with advance payment
+
+🔎 AJAX-Based Search
+
+Live menu search & filtering
+
+Improved UX with asynchronous requests
+
+💡 Project Highlights
+
+Clean relational modeling
+
+Proper separation of concerns (Models, Views, Templates)
+
+Scalable backend architecture
+
+Fully responsive UI
+
+Production-ready structure
