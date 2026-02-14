@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Menu | LUXE Dining{% endblock %}
+
+{% block content %}
+<section class="menu-hero"
+    style="background: var(--dark-color); color: var(--white); padding: 80px 0; text-align: center;">
+    <div class="container">
+        <h1 style="font-size: 4rem;">Our Menu</h1>
+        <p>Explore our carefully curated selection of fine dishes.</p>
+    </div>
+</section>
+
+<section class="menu-list" style="padding: 100px 0;">
+    <div class="container">
+        {% for category in categories %}
+        <div class="category-section" style="margin-bottom: 80px;">
+            <h2
+                style="font-size: 2.5rem; border-bottom: 2px solid var(--primary-color); display: inline-block; padding-bottom: 10px; margin-bottom: 40px;">
+                {{ category.name }}</h2>
+            <div class="card-grid">
+                {% for item in category.items.all %}
+                {% if item.is_available %}
+                <div class="card">
+                    {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="card-img">
+                    {% else %}
+                    <div
+                        style="height: 200px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-utensils" style="font-size: 2rem; color: #ccc;"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <h3>{{ item.name }}</h3>
+                            <span class="price">${{ item.price }}</span>
+                        </div>
+                        <p style="margin-top: 10px; color: #666;">{{ item.description }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <p style="text-align: center;">Our menu is currently under preparation. Please check back soon!</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

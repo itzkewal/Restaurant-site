@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | LUXE Dining{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Experience Culinary Excellence</h1>
+        <p>A fusion of tradition and innovation in every bite.</p>
+        <a href="{% url 'book' %}" class="btn-book">Reserve Your Table</a>
+    </div>
+</section>
+
+<section class="featured-menu" style="padding: 100px 0;">
+    <div class="container">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 50px;">Our Specials</h2>
+        <div class="card-grid">
+            {% for item in featured_items %}
+            <div class="card">
+                {% if item.image %}
+                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="card-img">
+                {% else %}
+                <div
+                    style="height: 250px; background: #ddd; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-utensils" style="font-size: 3rem; color: #999;"></i>
+                </div>
+                {% endif %}
+                <div class="card-body">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description|truncatewords:15 }}</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <span class="price">${{ item.price }}</span>
+                        <a href="{% url 'menu' %}" style="color: var(--primary-color);">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p style="text-align: center; grid-column: 1/-1;">Check back later for our featured specials!</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="about-snippet" style="background: var(--dark-color); color: var(--white); padding: 100px 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div>
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">The Story of LUXE</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                Started in 2010, LUXE has been the cornerstone of fine dining in the city. Our chefs use only the
+                freshest, locally sourced ingredients to create dishes that tell a story.
+            </p>
+            <a href="{% url 'about' %}" style="color: var(--primary-color); font-weight: 600;">Learn More &rarr;</a>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; height: 400px; background: #333;">
+            <div
+                style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url({% static 'images/about-story.png' %}) center/cover no-repeat;">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

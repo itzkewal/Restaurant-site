@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | LUXE Dining{% endblock %}
+
+{% block content %}
+<section class="contact-hero hero-base">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you. Visit us or reach out online.</p>
+    </div>
+</section>
+
+<section class="contact-content" style="padding: 100px 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+            <div>
+                <h2 style="font-size: 3rem; margin-bottom: 40px; font-family: 'Playfair Display', serif;">Let's Connect
+                </h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 50px;">Have a question or feedback? We'd love
+                    to hear from you. Our team is here to help.</p>
+
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 5px;">Our Location</h4>
+                            <p style="color: #666;">123 Gourmet Avenue, Food City, FC 45678</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 5px;">Phone Number</h4>
+                            <p style="color: #666;">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 5px;">Email Address</h4>
+                            <p style="color: #666;">info@luxedining.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 5px;">Opening Hours</h4>
+                            <p style="color: #666;">Mon - Sun: 11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card glass">
+                <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <h3 style="font-size: 2rem; margin-bottom: 30px; text-align: center;">Send a Message</h3>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg">Message</label>
+                        <textarea id="msg" name="msg" rows="5" required placeholder="Your message here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
