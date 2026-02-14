@@ -72,25 +72,5 @@ JavaScript (UI Interactivity)
 Configured Django Media settings for dynamic file storage
 
 Image upload and retrieval system
+
 ---
-## 📈 Future Enhancements
-
-To scale the platform further:
-
-🔐 User Authentication System
-
-Customer account creation
-
-Booking history dashboard
-
-💳 Payment Gateway Integration
-
-Stripe or Razorpay integration
-
-Online reservations with advance payment
-
-🔎 AJAX-Based Search
-
-Live menu search & filtering
-
-Improved UX with asynchronous requests
